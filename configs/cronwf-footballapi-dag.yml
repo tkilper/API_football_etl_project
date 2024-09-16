@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: cronwf-footballapi
+  namespace: argo
+spec:
+  schedule: "0 20 * * 1"
+  concurrencyPolicy: "Forbid"
+  startingDeadlineSeconds: 70
+  workflowSpec:
+    entrypoint: dag-template
+    serviceAccountName: argo
+    templates:
+    - name: dag-template
+      dag:
+        tasks:
+        - name: footballapi-etl-1
+          template: task-template
+  
+    - name: task-template
+      script:
+        image: tkilp/footballapi-etl:1.2
+        imagePullPolicy: Always
+        command: [bash]
+        source: |
+          python /code/run.py

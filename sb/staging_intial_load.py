@@ -1,4 +1,4 @@
-# *** stage raw data ***
+# INITIAL POSTGRES LOAD PROTOTYPE
 
 import requests
 from datetime import datetime

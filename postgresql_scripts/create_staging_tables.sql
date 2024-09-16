@@ -9,11 +9,11 @@ create table "Staging".dim_fixture_events (
 	"player.id" integer,
 	"assist.id" decimal,
 	"parameters.fixture" varchar(255),
-	load_timestamp date
+	load_timestamp timestamp
 )
 
 create table "Staging".dim_fixture_lineups (
-	"player.id" integer,
+	"player_id" integer,
 	"player.number" integer,
 	"player.pos" varchar(5),
 	"player.grid" varchar(5),
@@ -22,7 +22,7 @@ create table "Staging".dim_fixture_lineups (
 	"coach.id" integer,
 	"parameters.fixture" integer,
 	status varchar(10),
-	load_timestamp date
+	load_timestamp timestamp
 )
 
 create table "Staging".dim_fixture_stats (
@@ -70,32 +70,27 @@ create table "Staging".fact_fixture (
 	primary key ("fixture_id")
 )
 
-create table "Staging".dim_player_info (
-	"player.id" integer,
-	"player.name" varchar(255),
-	"player.firstname" varchar(255),
-	"player.lastname" varchar(255),
-	"player.age" integer,
-	"player.birth.date" varchar(255),
-	"player.birth.place" varchar(255),
-	"player.birth.country" varchar(255),
-	"player.nationality" varchar(255),
-	"player.height" varchar(255),
-	"player.weight" varchar(255),
-	"player.injured" boolean,
-	"player.photo" varchar(255),
-	load_timestamp timestamp,
-	primary key ("player.id")
-)
-	
-create table "Staging".dim_player_stats (
+create table "Staging".fact_player (
+	"player_id" integer,
+	"name" varchar(255),
+	"firstname" varchar(255),
+	"lastname" varchar(255),
+	"age" integer,
+	"birth.date" varchar(255),
+	"birth.place" varchar(255),
+	"birth.country" varchar(255),
+	"nationality" varchar(255),
+	"height" varchar(255),
+	"weight" varchar(255),
+	"injured" boolean,
+	"photo" varchar(255),
 	"team.id" integer,
 	"league.id" integer,
 	"league.name" varchar(255),
-	"league.country" varchar(255),
-	"league.logo" varchar(255),
+	"league.country" varchar(255), 
+	"league.logo" varchar(255), 
 	"league.flag" varchar(255),
-	"league.season" varchar(10),
+    "league.season" integer,
 	"games.appearences" integer,
 	"games.lineups" varchar(255),
 	"games.minutes" integer,
@@ -133,21 +128,20 @@ create table "Staging".dim_player_stats (
 	"penalty.scored" integer,
 	"penalty.missed" integer,
 	"penalty.saved" integer,
-	"player.id" integer,
 	load_timestamp timestamp,
-	primary key ("player.id")
+	primary key ("player_id")
 )
 
 create table "Staging".dim_teams (
-	"team.id" integer,
-	"team.name" varchar(255),
-	"team.code" varchar(255),
-	"team.country" varchar(255),
-	"team.founded" varchar(255),
-	"team.national" varchar(255),
-	"team.logo" varchar(255),
-	"venue.id" integer,
-	primary key ("team.id")
+	"team_id" integer,
+	"name" varchar(255),
+	"code" varchar(255),
+	"country" varchar(255),
+	"founded" varchar(255),
+	"national" varchar(255),
+	"logo" varchar(255),
+	"venue_id" integer,
+	load_timestamp timestamp
 )
 
 create table "Staging".dim_venues (
@@ -159,5 +153,6 @@ create table "Staging".dim_venues (
 	capacity integer,
 	surface varchar(255),
 	image varchar(255),
+	load_timestamp timestamp
 	primary key (id)
 )
