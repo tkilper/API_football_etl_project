@@ -44,6 +44,20 @@ def football():
         python_callable = _store_players,
         op_kwargs = {'players': '{{ ti.xcom_pull(task_ids="get_players") }}', 'teamid': TEAMID}
     )
+
+    format_players = DockerOperator(
+        task_id = 'format_prices',
+        image = 'airflow/football-app',
+        container_name = 'format_players',
+        api_version = 'auto',
+        auto_remove = True,
+        docker_url = 'tcp//docker-proxy:2375',
+        network_node = 'container:spark-master',
+        tty = True,
+        xcom_all = False,
+        mount_tmp_dir = False,
+        environment
+    )
     
     is_api_available() >> get_players >> store_players
 
