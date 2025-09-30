@@ -1,0 +1,556 @@
+{
+	"status": "success",
+	"response": {
+		"stats": [
+			{
+				"title": "Top stats",
+				"key": "top_stats",
+				"stats": [
+					{
+						"title": "Ball possession",
+						"key": "BallPossesion",
+						"stats": [
+							44,
+							56
+						],
+						"format": "integer",
+						"type": "graph",
+						"highlighted": "away"
+					},
+					{
+						"title": "Expected goals (xG)",
+						"key": "expected_goals",
+						"stats": [
+							"1.99",
+							"2.03"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Total shots",
+						"key": "total_shots",
+						"stats": [
+							10,
+							14
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Shots on target",
+						"key": "ShotsOnTarget",
+						"stats": [
+							8,
+							6
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Big chances",
+						"key": "big_chance",
+						"stats": [
+							6,
+							4
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Big chances missed",
+						"key": "big_chance_missed_title",
+						"stats": [
+							4,
+							3
+						],
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Accurate passes",
+						"key": "accurate_passes",
+						"stats": [
+							"268 (76%)",
+							"369 (81%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Fouls committed",
+						"key": "fouls",
+						"stats": [
+							14,
+							10
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Corners",
+						"key": "corners",
+						"stats": [
+							4,
+							2
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					}
+				]
+			},
+			{
+				"title": "Shots",
+				"key": "shots",
+				"stats": [
+					{
+						"title": "Shots",
+						"key": "shots",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Total shots",
+						"key": "total_shots",
+						"stats": [
+							10,
+							14
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Shots off target",
+						"key": "ShotsOffTarget",
+						"stats": [
+							1,
+							4
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Shots on target",
+						"key": "ShotsOnTarget",
+						"stats": [
+							8,
+							6
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Blocked shots",
+						"key": "blocked_shots",
+						"stats": [
+							1,
+							4
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Hit woodwork",
+						"key": "shots_woodwork",
+						"stats": [
+							0,
+							0
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Shots inside box",
+						"key": "shots_inside_box",
+						"stats": [
+							7,
+							9
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Shots outside box",
+						"key": "shots_outside_box",
+						"stats": [
+							3,
+							5
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					}
+				]
+			},
+			{
+				"title": "Expected goals (xG)",
+				"key": "expected_goals",
+				"stats": [
+					{
+						"title": "Expected goals (xG)",
+						"key": "expected_goals",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Expected goals (xG)",
+						"key": "expected_goals",
+						"stats": [
+							"1.99",
+							"2.03"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "xG open play",
+						"key": "expected_goals_open_play",
+						"stats": [
+							"1.23",
+							"0.90"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "xG set play",
+						"key": "expected_goals_set_play",
+						"stats": [
+							"0.76",
+							"0.35"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "xG non-penalty",
+						"key": "expected_goals_non_penalty",
+						"stats": [
+							"1.99",
+							"1.25"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "xG on target (xGOT)",
+						"key": "expected_goals_on_target",
+						"stats": [
+							"2.82",
+							"2.10"
+						],
+						"format": "double",
+						"type": "text",
+						"highlighted": "home"
+					}
+				]
+			},
+			{
+				"title": "Passes",
+				"key": "passes",
+				"stats": [
+					{
+						"title": "Passes",
+						"key": "passes",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Passes",
+						"key": "passes",
+						"stats": [
+							351,
+							455
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Accurate passes",
+						"key": "accurate_passes",
+						"stats": [
+							"268 (76%)",
+							"369 (81%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Own half",
+						"key": "own_half_passes",
+						"stats": [
+							131,
+							216
+						],
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Opposition half",
+						"key": "opposition_half_passes",
+						"stats": [
+							137,
+							153
+						],
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Accurate long balls",
+						"key": "long_balls_accurate",
+						"stats": [
+							"22 (44%)",
+							"19 (45%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Accurate crosses",
+						"key": "accurate_crosses",
+						"stats": [
+							"7 (50%)",
+							"3 (23%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Throws",
+						"key": "player_throws",
+						"stats": [
+							22,
+							17
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Touches in opposition box",
+						"key": "touches_opp_box",
+						"stats": [
+							23,
+							17
+						],
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Offsides",
+						"key": "Offsides",
+						"stats": [
+							2,
+							1
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					}
+				]
+			},
+			{
+				"title": "Defence",
+				"key": "defence",
+				"stats": [
+					{
+						"title": "Defence",
+						"key": "defense",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Tackles",
+						"key": "matchstats.headers.tackles",
+						"stats": [
+							14,
+							16
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Interceptions",
+						"key": "interceptions",
+						"stats": [
+							7,
+							4
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Blocks",
+						"key": "shot_blocks",
+						"stats": [
+							4,
+							1
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Clearances",
+						"key": "clearances",
+						"stats": [
+							23,
+							29
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Keeper saves",
+						"key": "keeper_saves",
+						"stats": [
+							5,
+							5
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "equal"
+					}
+				]
+			},
+			{
+				"title": "Duels",
+				"key": "duels",
+				"stats": [
+					{
+						"title": "Duels",
+						"key": "duels",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Duels won",
+						"key": "duel_won",
+						"stats": [
+							50,
+							49
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Ground duels won",
+						"key": "ground_duels_won",
+						"stats": [
+							"30 (49%)",
+							"31 (51%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "away"
+					},
+					{
+						"title": "Aerial duels won",
+						"key": "aerials_won",
+						"stats": [
+							"20 (53%)",
+							"18 (47%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "home"
+					},
+					{
+						"title": "Successful dribbles",
+						"key": "dribbles_succeeded",
+						"stats": [
+							"6 (46%)",
+							"1 (11%)"
+						],
+						"format": "integerWithPercentage",
+						"type": "text",
+						"highlighted": "home"
+					}
+				]
+			},
+			{
+				"title": "Discipline",
+				"key": "discipline",
+				"stats": [
+					{
+						"title": "Discipline",
+						"key": "discipline",
+						"stats": [
+							null,
+							null
+						],
+						"type": "title",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Yellow cards",
+						"key": "yellow_cards",
+						"stats": [
+							2,
+							2
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "equal"
+					},
+					{
+						"title": "Red cards",
+						"key": "red_cards",
+						"stats": [
+							0,
+							0
+						],
+						"format": "integer",
+						"type": "text",
+						"highlighted": "equal"
+					}
+				]
+			}
+		]
+	}
+}
