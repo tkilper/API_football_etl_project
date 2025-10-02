@@ -12,7 +12,7 @@
 # Import the SparkSession module
 from pyspark.sql import SparkSession
 from pyspark import SparkContext
-from pyspark.sql.functions import explode, arrays_zip, from_unixtime
+from pyspark.sql.functions import explode, arrays_zip, current_timestamp
 from pyspark.sql.types import DateType
 
 import os
@@ -39,16 +39,15 @@ if __name__ == '__main__':
             .json(f"s3a://{os.getenv('SPARK_APPLICATION_ARGS')}/players.json")
 
         # Explode the necessary arrays
-        df_exploded = df.select("timestamp", explode("indicators.quote").alias("quote")) \
-            .select("timestamp", "quote.*")
+        df_exploded = df.select("title", explode("members").alias("players")) \
+            .select("title", "players.*")
 
         # Zip the arrays
-        df_zipped = df_exploded.select(arrays_zip("timestamp", "close", "high", "low", "open", "volume").alias("zipped"))
-        df_zipped = df_zipped.select(explode("zipped")).select("col.timestamp", "col.close", "col.high", "col.low", "col.open", "col.volume")
-        df_zipped = df_zipped.withColumn('date', from_unixtime('timestamp').cast(DateType()))
+        df_exploded = df_exploded.select("title", "age", "assists", "goals", "height", "name", "penalties", "positionId", "positionIds", "positionIdsDesc", "rating", "rcards", "shirtNumber", "transferValue", "ycards")
+        df_exploded = df_exploded.withColumn("timestamp", current_timestamp())
 
         # Store in Minio
-        df_zipped.write \
+        df_exploded.write \
             .mode("overwrite") \
             .option("header", "true") \
             .option("delimiter", ",") \

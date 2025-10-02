@@ -16,11 +16,10 @@ headers = {
 
 response = requests.get(url, headers=headers, params=querystring)
 
-data = json.dumps(response.json()['response']['list']['squad'])
+data = response.json()['response']['list']['squad']
 print(data)
 
-"""
-file_name = 'C:\\Users\\Tristan\\OneDrive\\Desktop\\API_football_etl_project\\fcb_players_' + current_date + '.json'
+file_name = 'C:\\Users\\Tristan\\OneDrive\\Desktop\\API_football_etl_project\\sb\\fcb_players_' + current_date + '.json'
 
 with open(file_name, "w") as outfile:
-    json.dump(data, outfile)"""
+    json.dump(data, outfile)
