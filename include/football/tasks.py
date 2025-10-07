@@ -3,6 +3,8 @@ from minio import Minio
 import json
 from io import BytesIO
 from airflow.exceptions import AirflowNotFoundException
+from airflow.providers.discord.notifications.discord import DiscordNotifier
+from airflow.utils.context import Context
 
 BUCKET_NAME = 'football'
 

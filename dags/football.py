@@ -4,6 +4,7 @@ from airflow.sensors.base import PokeReturnValue
 from airflow.operators.python import PythonOperator
 from airflow.hooks.base import BaseHook
 from airflow.providers.docker.operators.docker import DockerOperator
+from airflow.providers.discord.notifications.discord import DiscordNotifier
 from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table, Metadata
@@ -11,12 +12,27 @@ from astro.sql.table import Table, Metadata
 from include.football.tasks import _get_players, _store_players, _get_formatted_csv, BUCKET_NAME
 
 TEAMID = "8634"
+current_date = datetime.today().strftime('%Y_%m_%d')
 
 @dag(
     start_date=datetime(2025, 1, 1),
     schedule='@weekly',
     catchup=False,
-    tags=['football']
+    tags=['football'],
+    on_failure_callback = DiscordNotifier(
+        discord_conn_id="discord", # Or your webhook URL directly
+        text="Task {{ task_instance.task_id }} failed!",
+        # Optional parameters:
+        username="Football-ETL Job",
+        avatar_url="https://www.flaticon.com/free-icons/spain"
+    ),
+    on_success_callback = DiscordNotifier(
+        discord_conn_id="discord", # Or your webhook URL directly
+        text=f"Football ETL Job has succeeded for week of {current_date}!",
+        # Optional parameters:
+        username="Football-ETL Job",
+        avatar_url="https://www.flaticon.com/free-icons/spain"
+    )
 )
 def football():
 
@@ -91,6 +107,8 @@ def football():
             "endpoint_url": BaseHook.get_connection('minio').host
         }
     )
+
+    
     
     is_api_available() >> get_players >> store_players >> format_players >> get_formatted_csv >> load_to_dw
 
