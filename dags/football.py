@@ -49,7 +49,7 @@ def football():
         url = f"{api.host}"
         print(url)
         response  = requests.get(url)
-        condition = response.json()['message'] == 'Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.'
+        condition = response.json()['message'] == "Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info."
         return PokeReturnValue(is_done=condition, xcom_value=response.url)
     
     get_players = PythonOperator(
