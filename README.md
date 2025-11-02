@@ -6,3 +6,7 @@ Hi! This project is my homemade, locally deployed batch ETL pipeline. It takes s
 Programming Languages: Python, SQL, PySpark
 
 Technologies: VS Code, Apache Airflow, Apache Spark, Metabase (Data Visualization), Minio (Datalake), Postgres (Data Warehouse), Astronomer
+
+Diagram:
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2235b6ec-342f-48df-b012-6f53ca1fa49e" />
